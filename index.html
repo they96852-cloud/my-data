@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>بياناتي</title>
+</head>
+<body>
+  <h1>بياناتي</h1>
+  <p id="message">تحميل...</p>
+  <p id="coins"></p>
+
+  <script>
+    fetch("data.json")
+      .then(r => r.json())
+      .then(data => {
+        document.getElementById("message").textContent = data.message;
+        document.getElementById("coins").textContent = "Coins: " + data.coins;
+      });
+  </script>
+</body>
+</html>
